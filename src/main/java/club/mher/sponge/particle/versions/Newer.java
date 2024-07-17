@@ -1,7 +1,6 @@
 package club.mher.sponge.particle.versions;
 
 import club.mher.sponge.particle.ParticleSupport;
-import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Particle;
 import org.bukkit.entity.Player;

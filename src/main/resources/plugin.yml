@@ -8,4 +8,4 @@ description: "BedWars1058 Sponge addon that plays an effect when placing a spong
 api-version: "1.13"
 
 softdepend:
-  - "BedWars1058"
+  - "BedWars2023"

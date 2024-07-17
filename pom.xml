@@ -6,7 +6,7 @@
 
     <groupId>me.mherzaqaryan</groupId>
     <artifactId>BedWars1058-Sponge</artifactId>
-    <version>1.0.2</version>
+    <version>1.1</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -22,6 +22,10 @@
             <id>andrei1058-repo</id>
             <url>https://repo.andrei1058.dev/snapshots/</url>
         </repository>
+        <repository>
+            <id>bedwars2023-releases</id>
+            <url>https://repo.tomkeuper.com/repository/releases/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -34,13 +38,7 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot</artifactId>
-            <version>1.8.8-R0.1-SNAPSHOT</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.andrei1058.bedwars</groupId>
-            <artifactId>bedwars-api</artifactId>
-            <version>22.7-SNAPSHOT</version>
+            <version>1.8-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -50,9 +48,9 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.20</version>
+            <groupId>com.tomkeuper.bedwars</groupId>
+            <artifactId>bedwars-api</artifactId>
+            <version>1.2.0</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

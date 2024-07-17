@@ -1,8 +1,7 @@
 package club.mher.sponge;
 
 import club.mher.sponge.particle.ParticleSupport;
-import com.andrei1058.bedwars.api.BedWars;
-import lombok.Getter;
+import com.tomkeuper.bedwars.api.BedWars;
 import club.mher.sponge.listeners.SpongePlaceListener;
 import club.mher.sponge.particle.versions.Newer;
 import club.mher.sponge.particle.versions.Older;
@@ -12,23 +11,20 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class Sponge extends JavaPlugin {
 
-    @Getter private static Sponge instance;
-    @Getter private static BedWars bedWars;
-    @Getter private static ParticleSupport particleSupport;
-    @Getter private static String splash, woodClick;
+    private static Sponge instance;
+    private static BedWars bedWars;
+    private static ParticleSupport particleSupport;
+    private static String splash, woodClick;
 
-    @Getter private static final String version = Bukkit.getServer().getClass().getPackage().getName().substring(23);
+    private static final String version = Bukkit.getServer().getClass().getPackage().getName().substring(23);
 
     @Override
     public void onEnable() {
         long start = System.currentTimeMillis();
         instance = this;
-        if (!setupBedwars()) {
-            return;
-        }
-        if (!setupParticle()) {
-            return;
-        }
+        if (!setupBedwars()) return;
+        if (!setupParticle()) return;
+
         bedWars = Bukkit.getServicesManager().getRegistration(BedWars.class).getProvider();
         new Metrics(this, 11788);
         Bukkit.getPluginManager().registerEvents(new SpongePlaceListener(), this);
@@ -43,9 +39,7 @@ public class Sponge extends JavaPlugin {
     }
 
     private boolean setupBedwars() {
-        if (Bukkit.getPluginManager().isPluginEnabled("BedWars1058")) {
-            return true;
-        }
+        if (Bukkit.getPluginManager().isPluginEnabled("BedWars2023")) return true;
         getLogger().severe("BedWars1058 was not found. Disabling...");
         setEnabled(false);
         return false;
@@ -72,4 +66,23 @@ public class Sponge extends JavaPlugin {
         return supported;
     }
 
+    public static ParticleSupport getParticleSupport() {
+        return particleSupport;
+    }
+
+    public static String getSplash() {
+        return splash;
+    }
+
+    public static String getWoodClick() {
+        return woodClick;
+    }
+
+    public static BedWars getBedWars() {
+        return bedWars;
+    }
+
+    public static Sponge getInstance() {
+        return instance;
+    }
 }
